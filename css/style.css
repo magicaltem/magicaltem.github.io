@@ -12,59 +12,121 @@
     --color-3: #d3d3d3;
 }
 
-
 /*========== GLOBAL ==========*/
 
 body {
     overflow: hidden;
 }
 
-.flex { display: flex; }
-
-#main-content {
+.flex {
     display: flex;
-    flex-direction: column;
-
-    margin: auto;
-    max-width: 800px;
-    min-height: 95vh;
-
-    position: relative;
-    z-index: 2;
 }
 
-#background {
-    position: absolute;
-    z-index: 1;
-    margin: auto;
-    width: 100%;
-    min-height: 95vh;
+@media only screen and (min-width: 480px) {
 
-    background: url("../images/gate3.png") no-repeat center;
-    background-size: 660px 1000px;
-    mask-image: radial-gradient(black 30%, transparent 70%, transparent);
-    opacity: 30%;
+    /* SM SCREEN */
+    #main-content {
+        display: flex;
+        flex-direction: column;
+
+        margin: auto;
+        max-width: 350px;
+        min-height: 95vh;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    #background {
+        position: absolute;
+        z-index: -1;
+        margin: auto;
+        width: 100%;
+        min-height: 95vh;
+
+        background: url("../images/gate3.png") no-repeat center;
+        background-size: 460px 95vh;
+        mask-image: radial-gradient(black 20%, transparent 60%, transparent);
+        opacity: 30%;
+    }
+
+    p,
+    h3 {
+        margin: 0px;
+        font-size: 1rem;
+        color: var(--color-1);
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        color: var(--color-1);
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        color: var(--color-1);
+    }
+
 }
 
-p, h1, h2, h3, a {
+
+@media only screen and (min-width: 780px) {
+
+    /* LG SCREEN */
+    #main-content {
+        display: flex;
+        flex-direction: column;
+
+        margin: auto;
+        max-width: 800px;
+        min-height: 95vh;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    #background {
+        position: absolute;
+        z-index: -1;
+        margin: auto;
+        width: 100%;
+        min-height: 95vh;
+
+        background: url("../images/gate3.png") no-repeat center;
+        background-size: 660px 1000px;
+        mask-image: radial-gradient(black 30%, transparent 70%, transparent);
+        opacity: 30%;
+    }
+
+    p,
+    h3 {
+        margin: 0px;
+        font-size: 1.5rem;
+        color: var(--color-1);
+    }
+
+    h1 {
+        font-size: 1.7rem;
+        color: var(--color-1);
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        color: var(--color-1);
+    }
+}
+
+
+
+p,
+h1,
+h2,
+h3,
+a {
     font-family: "MS Gothic", monospace;
 }
 
-p, h3 {
-    margin: 0px;
-    font-size: 20px;
-    color: var(--color-1);
-}
 
-h1 {
-    font-size: 35px;
-    color: var(--color-1);
-}
-
-h2 {
-    font-size: 26px;
-    color: var(--color-1);
-}
 
 /*---------- boxes ----------*/
 
@@ -75,12 +137,12 @@ h2 {
 
 .box {
     background-color: var(--color-3);
-    padding: 5px 50px 5px 50px;
+    padding: 0.1em 2.5em;
 }
 
 .box-title {
     background-color: var(--color-3);
-    padding: 1px 50px 1px 50px;
+    padding: 0.2em 1.5em;
     margin-bottom: auto;
     border-radius: 0px 100px 0px 0px;
     width: fit-content;
@@ -88,28 +150,37 @@ h2 {
 }
 
 .box-inner {
-    margin: 10px 0px;
+    margin: 0.5em 0em;
     background-color: white;
-    padding: 5px;
+    padding: 0.5em;
     border-radius: 5px;
 }
 
 /*========== HEADER ==========*/
 
-header {
-    width: 800px;
-}
-
 header .box {
     background-color: var(--color-3);
 }
 
-nav {
-    display: flex;
+@media only screen and (min-width: 480px) {
+    nav {
+        width: 350px;
+        display: flex;
+    }
+
 }
+
+@media only screen and (min-width: 780px) {
+    nav {
+        width: 800px;
+        display: flex;
+    }
+
+}
+
 nav a {
     margin: 0px 5px;
-    flex: 1;
+    flex: 1 1 0;
     height: 30px;
     background-color: var(--color-3);
     border-radius: 5px;
@@ -123,6 +194,7 @@ nav a {
     font-size: 20px;
     color: var(--color-1);
 }
+
 nav a.current-page {
     background: none;
     pointer-events: none;
@@ -137,14 +209,15 @@ main section {
 }
 
 #home-intro {
-    width: 300px;
+    width: 1fr;
 }
 
 #home-updates {
-    width: 500px;
+    width: 1fr;
 }
+
 #home-updates .box-inner {
-    height: 500px;
+    height: 50vh;
     overflow-y: auto;
 }
 
