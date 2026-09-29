@@ -22,7 +22,7 @@ body {
     display: flex;
 }
 
-@media only screen and (min-width: 480px) {
+@media (max-width: 780px) {
 
     /* SM SCREEN */
     #main-content {
@@ -70,7 +70,7 @@ body {
 }
 
 
-@media only screen and (min-width: 780px) {
+@media (min-width: 780px) {
 
     /* LG SCREEN */
     #main-content {
@@ -162,7 +162,7 @@ header .box {
     background-color: var(--color-3);
 }
 
-@media only screen and (min-width: 480px) {
+@media (max-width: 780px) {
     nav {
         width: 350px;
         display: flex;
@@ -170,7 +170,7 @@ header .box {
 
 }
 
-@media only screen and (min-width: 780px) {
+@media (min-width: 780px) {
     nav {
         width: 800px;
         display: flex;
@@ -216,9 +216,18 @@ main section {
     width: 1fr;
 }
 
-#home-updates .box-inner {
-    height: 50vh;
-    overflow-y: auto;
+@media (max-width: 780px) {
+    #home-updates .box-inner {
+        height: 200px;
+        overflow-y: auto;
+    }
+}
+
+@media (min-width: 780px) {
+    #home-updates .box-inner {
+        height: 50vh;
+        overflow-y: auto;
+    }
 }
 
 .update-divider {
