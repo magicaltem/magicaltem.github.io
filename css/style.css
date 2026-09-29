@@ -42,7 +42,7 @@ body {
         z-index: -1;
         margin: auto;
         width: 100%;
-        min-height: 95vh;
+        min-height: 80vh;
 
         background: url("../images/gate3.png") no-repeat center;
         background-size: 460px 95vh;
